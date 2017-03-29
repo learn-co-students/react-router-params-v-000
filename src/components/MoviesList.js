@@ -12,6 +12,7 @@ export default (props) => {
               <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
             </li>)}
         </ul>
+        <Link to="/movies/new">Add a Movie</Link>
       </div>
     </div>
   )
