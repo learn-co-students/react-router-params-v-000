@@ -6,7 +6,7 @@
 
 ### Review
 
-In the previous lesson, we successfully created our nested route, and saw how to render child components.  While our application now renders the MoviesShow component as a child of the MoviesList component, upon visitng on a url like `/movies/3`, we are not yet displaying information from that particular movie with the id of 3.  Let's change this.  
+In the previous lesson, we successfully created our nested route, and saw how to render child components.  While our application now renders the MoviesShow component as a child of the MoviesList component, upon visitng a url like `/movies/3`, we are not yet displaying information from that particular movie with the id of 3.  Let's change this.  
 
 ### Dynamically finding the show
 
@@ -256,3 +256,5 @@ So in this section we saw how upon visiting a url, React Router will supply any 
 Then we saw how after taking an action like creating a new movie, we can change the url by using the browserHistory.push method.  So a call to browserHistory.push('/movies') changes the url to `/movies`.
 
 Finally, we saw that by making use of the IndexRoute we can specify the component that should be passed through as the child prop when the user visits the top-level of a nested route.
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/react-router-params'>React Router Params</a> on Learn.co and start learning to code for free.</p>
