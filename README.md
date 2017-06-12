@@ -1,12 +1,12 @@
 ### Params and Redirects
 
 ### Objectives
-  * Learn how react router passes through params to the child component, and how to reference those params
+  * Learn how react router passes through params to a React Router rendered component
   * Learn how to use react router to change the displayed url  
 
 ### Review
 
-In the previous lesson, we successfully created our nested route, and saw how to render child components.  While our application now renders the MoviesShow component as a child of the MoviesList component, upon visitng a url like `/movies/3`, we are not yet displaying information from that particular movie with the id of 3.  Let's change this.  
+In the previous lesson, we successfully created our nested route, and saw how to render the MovieShow component.  While our application now renders the MoviesShow component upon visitng a url like `/movies/3`, we are not yet displaying information from that particular movie with the id of 3.  Let's change this.  
 
 ### Dynamically finding the show
 
