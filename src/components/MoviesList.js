@@ -1,18 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
-export default (props) => {
-  const movies = props.movies;
+const MoviesList = ({ movies }) => {
+  const renderMovies = movies.map(movie => 
+    <Link style={{ marginRight: '12px' }} key={movie.id} to={`/movies/${movie.id}`}>{movie.title}</Link>
+  );
+  
   return (
     <div>
-      <div className='col-md-4'>
-        <ul>
-          {movies.map( movie =>
-            <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-            </li>)}
-        </ul>
-      </div>
+      {renderMovies}
     </div>
-  )
-}
+  );
+};
+
+export default MoviesList;

@@ -1,25 +1,22 @@
-import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-
-import {fetchMovies} from '../actions'
-
+import React from 'react';
+import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import MoviesList from '../components/MoviesList';
+import MovieShow from './MovieShow';
 
-class MoviesPage extends Component {
-  render(){
-    return(
-      <div>
-        <MoviesList movies={this.props.movies} />
-        {this.props.children}
-      </div>)
-  }
-}
+const MoviesPage = ({ match, movies }) => 
+  <div>
+    <MoviesList movies={movies} />
+    <Route path={`${match.url}/:movieId`} component={MovieShow}/>
+    <Route exact path={match.url} render={() => (
+      <h3>Please select a Movie from the list.</h3>
+    )}/>
+  </div>;
 
-function mapStateToProps(state){
+const mapStateToProps = (state) => {
   return {
     movies: state.movies
-  }
+  };
 }
 
 export default connect(mapStateToProps)(MoviesPage);
