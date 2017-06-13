@@ -25,7 +25,7 @@ class MoviesNew extends Component {
 
   render(){
     return (
-      <form onSubmit={this.handleOnSubmit} >
+      <form style={{ marginTop: '16px' }} onSubmit={this.handleOnSubmit} >
         <input 
           type="text" 
           onChange={this.handleOnChange} 
@@ -36,4 +36,4 @@ class MoviesNew extends Component {
   }
 }
 
-export default connect(null, { mapDispatchToProps })(MoviesNew)
+export default connect(null, { addMovie })(MoviesNew)
