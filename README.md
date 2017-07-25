@@ -119,9 +119,6 @@ Let's add our second nested route. Going to '/movies/new' should display the `Mo
 
 We've already created out `MoviesNew` component - it's a simple form that dispatches the `addMovie` action on submission. Let's add that into our Route, the same way we did with our `Show` component.
 
-```javascript
-
-```
 Note that we **must** define our `/movies/new` route first. Why? Because otherwise, the `/:id` route handler would catch it first and assessing `"new"` to be the id.
 
 Let's add a link to our Movies List to add a new movie.
