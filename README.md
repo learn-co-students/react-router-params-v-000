@@ -222,7 +222,7 @@ export default connect(mapStateToProps)(MoviesPage);
 
 Finally, it would be nice if after creating the new Movie, we could "redirect" the user back to the '/movies' route. Luckily, React Router gives us a nice interface to do this.
 
-All of our components that are nested within `<Router>`, which is currently all of our application, have passed down props of `history`. Thie `history` object has a function call `push()` that take in a url string to update the page URL and redirect. Let's add this to our __MoviesNew's handleOnSubmit()__ function. 
+All of our components that are nested within `<Router>`, which is currently all of our application, have passed down props of `history`. Thie `history` object has a function call `push()` that takes in a url string to update the page URL and redirect. Let's add this to our __MoviesNew's handleOnSubmit()__ function. 
 
 ```javascript
 //src/containers/MoviesNew
