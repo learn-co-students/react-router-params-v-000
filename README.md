@@ -119,9 +119,6 @@ Let's add our second nested route. Going to '/movies/new' should display the `Mo
 
 We've already created out `MoviesNew` component - it's a simple form that dispatches the `addMovie` action on submission. Let's add that into our Route, the same way we did with our `Show` component.
 
-```javascript
-
-```
 Note that we **must** define our `/movies/new` route first. Why? Because otherwise, the `/:id` route handler would catch it first and assessing `"new"` to be the id.
 
 Let's add a link to our Movies List to add a new movie.
@@ -189,7 +186,7 @@ const NavBar = props => {
 export default NavBar;
 ```
 
-So let's try this out in the browser to see if it loads the `MoviesNew` component. Everything looks good except for one thing. It is now loading the `MoviesNew` & the `MovieShow` component. Why is that?? Well, if you notice `movies/new` and `movies/:movieId` could look like the same route to React Router unless we are more explicit. I think it is time to introduce __React Router's Switch__ component. The __Switch__ components real power is that it uniquely renders a route exclusively. Compare this to the __Route__ component that renders inclusively all of the matching routes (which is why it is rendering both component right now). Let's update our __MoviesPage__ component so that it uses the __Switch__ component. 
+So let's try this out in the browser to see if it loads the `MoviesNew` component. Everything looks good except for one thing. It is now loading the `MoviesNew` & the `MovieShow` component. Why is that?? Well, if you notice `movies/new` and `movies/:movieId` could look like the same route to React Router unless we are more explicit. I think it is time to introduce __React Router's Switch__ component. The __Switch__ component's real power is that it uniquely renders a route exclusively. Compare this to the __Route__ component that renders inclusively all of the matching routes (which is why it is rendering both components right now). Let's update our __MoviesPage__ component so that it uses the __Switch__ component.
 
 ```js
 // ./src/containers/MoviesPage.js
