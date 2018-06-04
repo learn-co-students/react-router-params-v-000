@@ -6,7 +6,7 @@
 
 ### Review
 
-In the previous lesson, we successfully created our nested route, and saw how to render the __MovieShow__ component.  While our application now renders the __MovieShow__ component upon visitng a url like `/movies/3`, we are not yet displaying information from that particular movie with the id of 3. Let's change this.  
+In the previous lesson, we successfully created our nested route, and saw how to render the __MovieShow__ component.  While our application now renders the __MovieShow__ component upon visiting a url like `/movies/3`, we are not yet displaying information from that particular movie with the id of 3. Let's change this.  
 
 ### Dynamically finding the show
 
@@ -75,7 +75,7 @@ const MovieShow = props =>
 
 const mapStateToProps = (state, ownProps) => {
   const movie = state.movies.find(movie => movie.id == ownProps.match.params.movieId)
-  
+
   if (movie) {
     return { movie }
   } else {
@@ -102,7 +102,7 @@ const MovieShow = ({ movie }) =>
 
 const mapStateToProps = (state, ownProps) => {
   const movie = state.movies.find(movie => movie.id == ownProps.match.params.movieId)
-  
+
   if (movie) {
     return { movie }
   } else {
@@ -132,7 +132,7 @@ import MoviesList from '../components/MoviesList';
 import MovieShow from './MovieShow';
 import MoviesNew from './MoviesNew';
 
-const MoviesPage = ({ match, movies }) => 
+const MoviesPage = ({ match, movies }) =>
   <div>
     <MoviesList movies={movies} />
     <Route path={`${match.url}/new`} component={MoviesNew} />
@@ -161,20 +161,20 @@ import { NavLink } from 'react-router-dom';
 const NavBar = props => {
   return (
     <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
-      <NavLink 
-        style={{ marginRight: '10px' }} 
+      <NavLink
+        style={{ marginRight: '10px' }}
         to="/"
       >
         Home
       </NavLink>
-      <NavLink 
-        style={{ marginRight: '10px' }} 
+      <NavLink
+        style={{ marginRight: '10px' }}
         to="/movies"
       >
         Movies
       </NavLink>
-      <NavLink 
-        style={{ marginRight: '10px' }} 
+      <NavLink
+        style={{ marginRight: '10px' }}
         to="/movies/new"
       >
         Add Movie
@@ -197,7 +197,7 @@ import MoviesList from '../components/MoviesList';
 import MovieShow from './MovieShow';
 import MoviesNew from './MoviesNew';
 
-const MoviesPage = ({ match, movies }) => 
+const MoviesPage = ({ match, movies }) =>
   <div>
     <MoviesList movies={movies} />
     <Switch> {/* Make sure to wrap all of your Routes as children of the Switch component*/ }
@@ -222,7 +222,7 @@ export default connect(mapStateToProps)(MoviesPage);
 
 Finally, it would be nice if after creating the new Movie, we could "redirect" the user back to the '/movies' route. Luckily, React Router gives us a nice interface to do this.
 
-All of our components that are nested within `<Router>`, which is currently all of our application, have passed down props of `history`. Thie `history` object has a function call `push()` that takes in a url string to update the page URL and redirect. Let's add this to our __MoviesNew's handleOnSubmit()__ function. 
+All of our components that are nested within `<Router>`, which is currently all of our application, have passed down props of `history`. Thie `history` object has a function call `push()` that takes in a url string to update the page URL and redirect. Let's add this to our __MoviesNew's handleOnSubmit()__ function.
 
 ```javascript
 //src/containers/MoviesNew
@@ -259,9 +259,9 @@ class MoviesNew extends Component {
   render(){
     return (
       <form style={{ marginTop: '16px' }} onSubmit={this.handleOnSubmit} >
-        <input 
-          type="text" 
-          onChange={this.handleOnChange} 
+        <input
+          type="text"
+          onChange={this.handleOnChange}
           placeholder="Add a Movie" />
         <input type="submit" value="Add Movie" />
       </form>
@@ -272,7 +272,7 @@ class MoviesNew extends Component {
 export default connect(null, { addMovie })(MoviesNew)
 ```
 
-Now when we add a movie we are sent back to our `/movies` and it loads the `MoviesPage` component. 
+Now when we add a movie we are sent back to our `/movies` and it loads the `MoviesPage` component.
 
 ### Summary
 
