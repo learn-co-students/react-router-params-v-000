@@ -1,8 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const MovieShow = props =>
+const MovieShow = ({ movie }) =>
   <div>
-    <h3>Movie Show Component!</h3>
+    <h3>Title: {movie.title}</h3>
   </div>;
 
-export default MovieShow;
+const mapStateToProps = (state, ownProps) => {
+  const movie = state.movies.find(movie => movie.id == ownProps.match.params.movieId)
+
+  if (movie) {
+    return { movie }
+  } else {
+    return { movie: {} }
+  }
+}
+
+export default connect(mapStateToProps)(MovieShow);
